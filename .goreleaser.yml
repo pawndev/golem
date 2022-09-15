@@ -25,12 +25,11 @@ builds:
     - -trimpath
 
 dockers:
-  - image_templates:
-    - "lesspion/golem:{{ .Tag }}"
+- image_templates: ["lesspion/golem:{{ .Tag }}"]
   dockerfile: Dockerfile
   use: buildx
   build_flag_template:
-    - "--build-arg=GIT_TAG_NAME={{ .Tag }}"
+  - "--build-arg=GIT_TAG_NAME={{ .Tag }}"
 
 archives:
 - format: zip
